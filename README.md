@@ -3,13 +3,12 @@
 -Username : admin
 -Password: Test123
 # FAQ Management System
-This is a Django-based FAQ management system with support for multi-language translations.
+This is a Django FAQ management system with support for multi-language translations.
 
 ## Features
 - Create, update, delete, and retrieve FAQs.
 - Multi-language support (English, Hindi, Telugu, Tamil, Marathi, Bengali).
-- Caching using Redis for improved performance.
-- REST API for managing FAQs.
+- Caching using Redis for efficiency.
 
 ---
 
@@ -56,6 +55,7 @@ All API endpoints are available under http://localhost:8000/api/.
 Fetch all FAQs in the specified language.
 
 Endpoint:
+
 GET /api/faqs/
 Query Parameters
 lang (optional): Language code (en, hi, te, ta, mr, bn)
@@ -84,6 +84,7 @@ curl http://localhost:8000/api/faqs/?lang=mr
 Create a new FAQ.
 
 Endpoint
+
 POST /api/faqs/
 Request Body
 ```json
@@ -114,7 +115,8 @@ Example Response
 
 Retrieve a specific FAQ by its ID.
 
-Endpoint
+Endpoint:
+
 GET /api/faqs/{id}/
 Example Request
 ```bash
@@ -131,7 +133,8 @@ Example Response
 4. Update an FAQ
 Update an existing FAQ by its ID.
 
-Endpoint
+Endpoint:
+
 PUT /api/faqs/{id}/
 Request Body
 ```json
@@ -161,7 +164,8 @@ Example Response
 
 Delete an existing FAQ by its ID.
 
-Endpoint
+Endpoint:
+
 DELETE /api/faqs/{id}/
 Example Request
 ```bash
@@ -170,7 +174,7 @@ curl -X DELETE http://localhost:8000/api/faqs/1/
 Response
 Status Code: 204 No Content
 
-Running Tests
+Running Tests:
 
 To run the tests:
 
