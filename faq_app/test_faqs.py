@@ -9,7 +9,7 @@ def faq():
     """Fixture to create a sample FAQ for testing."""
     faq_data = {
         "question": "What is Django?",
-        "answer": "<p>Django is a web framework.</p>"
+        "answer": "Django is a web framework."
     }
     return FAQ.objects.create(**faq_data)
 
@@ -25,7 +25,7 @@ def test_create_faq(api_client):
     url = reverse('faq-list')
     data = {
         "question": "Who is the creator of this application?",
-        "answer": "<p>Aaryan is the creator of this application</p>"
+        "answer": "Aaryan is the creator of this application"
     }
 
     response = api_client.post(url, data, format='json')
@@ -52,7 +52,7 @@ def test_update_faq(api_client, faq):
     url = reverse('faq-detail', args=[faq.id])
     updated_data = {
         "question": "What is Django?",
-        "answer": "<p>Django is a Python web framework for rapid development.</p>"
+        "answer": "Django is a Python web framework for rapid development."
     }
 
     response = api_client.put(url, updated_data, format='json')
@@ -117,7 +117,7 @@ def test_cache_invalidation_on_create(api_client):
 
     data = {
         "question": "What is this test?",
-        "answer": "<p>This is to check if cache is invalidated</p>"
+        "answer": "This is to check if cache is invalidated"
     }
     api_client.post(url, data, format='json')
 
@@ -134,7 +134,7 @@ def test_cache_invalidation_on_update(api_client, faq):
 
     updated_data = {
         "question": "What is Django?",
-        "answer": "<p>Django is a Python web framework.</p>"
+        "answer": "Django is a Python web framework."
     }
     api_client.put(url, updated_data, format='json')
 
