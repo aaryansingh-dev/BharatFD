@@ -18,12 +18,15 @@ class FAQViewSet(viewsets.ModelViewSet):
         data = cache.get(cache_key)
 
         if not data:
-            all_faqs = FAQ.objects.all()
-            data = [{"question": faq.get_translation('question', lang), "answer": faq.get_translation('answer', lang)}
-                    for faq in all_faqs]
+            data = FAQ.objects.all()
             cache.set(cache_key, data, timeout=CACHE_TIMEOUT * 60)
 
         return data
+
+    def get_serializer_context(self):
+        context = super().get_serializer_context()
+        context['req'] = self.request
+        return context
 
     def perform_create(self, serializer):
         instance = serializer.save()

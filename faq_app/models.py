@@ -42,9 +42,9 @@ class FAQ(models.Model):
         field_name = f'{field}_{lang}'
         if getattr(self, field_name):
             return getattr(self, field_name)
-        elif getattr(self,f'{field}_en' ):
+        elif getattr(self,f'{field}_en'):
             # fall back to english
-            return getattr(self,f'{field}_en' )
+            return getattr(self,f'{field}_en')
         else:
             # if english not found, fallback to original answer
             return getattr(self,field)
