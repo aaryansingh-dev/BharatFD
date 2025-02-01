@@ -22,6 +22,7 @@ python-decouple==3.8    # For managing environment variables
 # Testing
 pytest==7.4.2
 pytest-django==4.7.0
+pytest-cov==3.0.0
 
 # Development
 ipython==8.17.2

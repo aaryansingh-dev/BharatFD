@@ -51,5 +51,3 @@ class FAQViewSet(viewsets.ModelViewSet):
         for lang in LANGUAGES:
             cache_key = CACHE_KEY_PREFIX + lang
             cache.delete(cache_key)
-
-# Create your views here.
