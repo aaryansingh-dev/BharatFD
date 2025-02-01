@@ -1,0 +1,27 @@
+# Core Django
+Django==4.2.7
+djangorestframework==3.14.0
+
+# Caching
+redis==5.0.1            # Redis client
+django-redis==5.2.0
+
+# WYSIWYG Editor
+django-ckeditor==6.7.0
+
+# Translations
+googletrans==4.0.0-rc1
+
+# Static Files
+whitenoise==6.6.0
+
+# Deployment
+gunicorn==21.2.0
+python-decouple==3.8    # For managing environment variables
+
+# Testing
+pytest==7.4.2
+pytest-django==4.7.0
+
+# Development
+ipython==8.17.2
